@@ -7,7 +7,9 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault()
     SetTodos(currentTodos => { return [...currentTodos, { id: crypto.randomUUID(), title: newItem, completed: false }] })
+  SetNewItem("")
   }
+
   return (
     <>
       <form onSubmit={handleSubmit} className="new-item-form">
