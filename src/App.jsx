@@ -3,9 +3,13 @@ import "./style.css"
 
 function App() {
   const [newItem, SetNewItem] = useState("")
+
+  function handleSubmit(e){
+    e.preventDefault()
+  }
   return (
     <>
-      <form className="new-item-form">
+      <form onSubmit={handleSubmit} className="new-item-form">
         <div className="form-row">
           <label htmlFor="item">New Item</label>
           <input value={newItem} onChange={e => SetNewItem(e.target.value)} type="text" id="item" />
