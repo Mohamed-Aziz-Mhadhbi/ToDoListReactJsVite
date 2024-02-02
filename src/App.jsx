@@ -3,9 +3,10 @@ import "./style.css"
 
 function App() {
   const [newItem, SetNewItem] = useState("")
-
-  function handleSubmit(e){
+  const [todos, SetTodos] = useState([])
+  function handleSubmit(e) {
     e.preventDefault()
+    SetTodos([...todos, { id: crypto.randomUUID(), title: newItem, completed: false }])
   }
   return (
     <>
